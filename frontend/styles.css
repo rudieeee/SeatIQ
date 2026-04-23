@@ -1,0 +1,212 @@
+:root {
+  --bg: #f7f4ef;
+  --ink: #141414;
+  --ink-soft: #505050;
+  --accent: #0f766e;
+  --accent-2: #f59e0b;
+  --danger: #c1121f;
+  --card: #fffefb;
+  --ring: rgba(15, 118, 110, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.22), transparent 38%),
+    radial-gradient(circle at 88% 8%, rgba(15, 118, 110, 0.2), transparent 40%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+.page {
+  width: min(980px, 92vw);
+  margin: 2rem auto 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.hero {
+  padding: 1.6rem;
+}
+
+.hero h1 {
+  margin: 0.3rem 0;
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.chip {
+  display: inline-block;
+  margin: 0;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid #e7e0d6;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 14px 40px rgba(20, 20, 20, 0.06);
+  animation: rise 340ms ease both;
+}
+
+.panel h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.1rem;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.72rem 0.8rem;
+  border: 1px solid #cfc6ba;
+  border-radius: 12px;
+  font: inherit;
+  background: #fff;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.grid-two {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 0.78rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn.subtle {
+  background: #111827;
+}
+
+.btn.danger {
+  background: var(--danger);
+}
+
+.cards {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.card {
+  border: 1px solid #e7e0d6;
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.badge {
+  margin-top: 0.45rem;
+  display: inline-block;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accent);
+}
+
+.badge.full {
+  background: var(--danger);
+}
+
+.seat-preview {
+  margin: 0.9rem 0;
+  font-family: "IBM Plex Mono", monospace;
+  background: #f3f4f6;
+  border-radius: 10px;
+  padding: 0.5rem 0.65rem;
+}
+
+pre {
+  margin: 0.8rem 0 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: 0.8rem;
+  border-radius: 12px;
+  background: #111827;
+  color: #e5e7eb;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.86rem;
+  max-height: 320px;
+  overflow: auto;
+}
+
+.status-wrap pre {
+  min-height: 88px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .grid-two {
+    grid-template-columns: 1fr;
+  }
+}

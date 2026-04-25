@@ -3,6 +3,5 @@ Flask-SQLAlchemy==3.1.1
 Flask-JWT-Extended==4.6.0
 Flask-Cors==5.0.1
 Flask-SocketIO==5.3.7
-Flask-APScheduler==1.13.1
-psycopg[binary]==3.2.6
+PyMySQL==1.1.1
 python-dotenv==1.0.1
